@@ -1,0 +1,11 @@
+###Regiser
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "name": "Superman",
+    "address": "500001 hyd d-20"
+}
+
+### get all users
+GET http://localhost:3000

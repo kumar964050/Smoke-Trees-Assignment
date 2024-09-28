@@ -1,0 +1,27 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/index.css')
+  title Welcome to SmokeTrees
+  style.
+    .max-600 {
+    max-width: 600px;
+    }
+body
+  .container.vh-100.d-flex.flex-column.justify-content-center
+    table.table
+      thead
+        tr
+          th(scope='col') id
+          th(scope='col') name
+          th(scope='col') address
+      tbody
+        each user in users
+          tr
+            th(scope='row')=user._id
+            td=user.name
+            td=user.addresses[0].address
+
+
