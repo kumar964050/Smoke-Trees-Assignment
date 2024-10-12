@@ -1,5 +1,5 @@
 const express = require("express");
-
+var morgan = require("morgan");
 // models
 const userModel = require("./models/user.model");
 const addressModel = require("./models/address.model");
@@ -9,6 +9,7 @@ const CustomError = require("./utils/CustomError");
 const app = express();
 // Middleware
 app.use(express.json());
+app.use(morgan("dev"));
 app.use(express.static("public"));
 app.set("view engine", "pug");
 
@@ -43,7 +44,6 @@ app.get("/users", async (req, res, next) => {
   res.render("users", { users });
 });
 
-// error handling middleware
-app.use(Errors);
+app.use(Errors); // error handling middleware
 
 module.exports = app;
